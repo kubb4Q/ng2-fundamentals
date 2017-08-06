@@ -1,3 +1,7 @@
+import { EventService } from './shared/event.service';
+import { NgForm } from '@angular/forms/src/directives';
+import { NgFor } from '@angular/common/src/directives/ng_for_of';
+import { ngfactoryFilePath } from '@angular/compiler/src/aot/util';
 import { $NBSP } from '@angular/compiler/src/chars';
 import { Component } from '@angular/core';
 import { selector } from 'rxjs/operator/multicast';
@@ -5,26 +9,24 @@ import { selector } from 'rxjs/operator/multicast';
 
 @Component({
   selector: 'events-list',
-  template:`
+  template: `
     <div>
     <h1>Upcoming Angular 2 Events</h1>
     <hr/>
-    <event-thumbnail [event]="event1"></event-thumbnail>
+    <div class="row">
+      <div *ngFor="let event of events" class="col-md-5"> 
+        <event-thumbnail [event]="event"></event-thumbnail>
+      </div>
+    </div>
   </div>
   `
 })
-export class EventsListComponent{
-  event1  = {
-    id: 1,
-    name: 'Angular Connect',
-    date: '9/26/2036',
-    time: '10:00 am',
-    price: 599.99,
-    imageUrl: '/app/assets/images/angularconnect-shield-png',
-    location:{
-      address: '1057 DT',
-      city: 'London',
-      country: 'England'
-    }
+export class EventsListComponent {
+  events: any[]
+  constructor(private eventService: EventService) {
+  }
+
+  ngOnInit() {
+    this.events = this.eventService.getEvents()
   }
 }
