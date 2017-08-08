@@ -1,3 +1,4 @@
+import { EventListResolver } from './events/events-list-resolver.service';
 import { EventRouteActivator } from './events/event-details/event-route-activator.service';
 import { Error404Component } from './errors/404.component';
 import { CreateEventComponent } from './events/create-event.component';
@@ -13,7 +14,8 @@ export const appRoutes: Routes = [
   },
   {
     path: 'events',
-    component: EventsListComponent
+    component: EventsListComponent,
+    resolve: { events: EventListResolver }
   },
   {
     path: 'events/:id',
