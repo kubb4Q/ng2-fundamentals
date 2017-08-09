@@ -4,6 +4,13 @@ import { Component } from '@angular/core';
 
 @Component({
   templateUrl: 'app/user/login.component.html',
+  styles: [`
+    em {
+      float: right;
+      color: #e05c65;
+      padding-left: 10px;
+    }
+  `]
 })
 export class LoginComponent {
 
