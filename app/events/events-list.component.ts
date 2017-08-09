@@ -1,3 +1,4 @@
+import { IEvent } from './shared/event.model';
 import { ActivatedRoute } from '@angular/router';
 import { ToastrService } from '../common/toastr.service';
 import { EventService } from './shared/event.service';
@@ -23,7 +24,7 @@ import { selector } from 'rxjs/operator/multicast';
   `
 })
 export class EventsListComponent {
-  events: any[]
+  events: IEvent[]
   constructor(private eventService: EventService, private toastr: ToastrService, private route: ActivatedRoute) {
   }
 
