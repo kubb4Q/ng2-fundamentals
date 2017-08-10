@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from './user/auth.service';
 import { RouterModule } from '@angular/router';
 import { ToastrService } from './common/toastr.service';
@@ -22,6 +23,8 @@ import { appRoutes } from './routes';
 @NgModule({
   imports: [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(appRoutes)
   ],
   declarations: [
