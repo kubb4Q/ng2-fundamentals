@@ -12,8 +12,8 @@ import {
   EventDetailsComponent,
   EventsListComponent,
   EventThumbnailComponent,
-  EventService
-
+  EventService,
+  CreateSessionComponent
 } from './events/index'
 import { EventsAppComponet } from './events-app.component'
 import { NavBarComponent } from './nav/navbar.component'
@@ -34,7 +34,8 @@ import { appRoutes } from './routes';
     EventDetailsComponent,
     CreateEventComponent,
     Error404Component,
-    NavBarComponent
+    NavBarComponent,
+    CreateSessionComponent
   ],
   providers: [
     EventService,
