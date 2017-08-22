@@ -16,10 +16,11 @@ import {
   CreateSessionComponent,
   SessionListComponent
 } from './events/index'
+import { CollapsibleWellComponent } from './common/collapsible-well.component'
 import { EventsAppComponet } from './events-app.component'
 import { NavBarComponent } from './nav/navbar.component'
-import { Error404Component } from './errors/404.component';
-import { appRoutes } from './routes';
+import { Error404Component } from './errors/404.component'
+import { appRoutes } from './routes'
 
 @NgModule({
   imports: [
@@ -37,7 +38,8 @@ import { appRoutes } from './routes';
     Error404Component,
     NavBarComponent,
     CreateSessionComponent,
-    SessionListComponent
+    SessionListComponent,
+    CollapsibleWellComponent
   ],
   providers: [
     EventService,

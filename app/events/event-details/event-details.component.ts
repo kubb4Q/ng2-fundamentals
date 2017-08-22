@@ -9,7 +9,7 @@ import { IEvent, ISession } from '../shared/index'
   styles: [`
   .container { padding-left: 20px; padding-right: 20px; }
   .event-image {height: 100px;}
-  a {cursor: pointer}
+  a {cursor: pointer;}
   `]
 })
 export class EventDetailsComponent {
