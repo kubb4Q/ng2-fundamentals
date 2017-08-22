@@ -1,6 +1,5 @@
 import { IEvent } from './shared/event.model';
 import { ActivatedRoute } from '@angular/router';
-import { ToastrService } from '../common/toastr.service';
 import { EventService } from './shared/event.service';
 import { NgForm } from '@angular/forms/src/directives';
 import { NgFor } from '@angular/common/src/directives/ng_for_of';
@@ -17,7 +16,7 @@ import { selector } from 'rxjs/operator/multicast';
     <hr/>
     <div class="row">
       <div *ngFor="let event of events" class="col-md-5"> 
-        <event-thumbnail (click)="handleThumbnailClick(event.name)" [event]="event"></event-thumbnail>
+        <event-thumbnail [event]="event"></event-thumbnail>
       </div>
     </div>
   </div>
@@ -25,14 +24,10 @@ import { selector } from 'rxjs/operator/multicast';
 })
 export class EventsListComponent {
   events: IEvent[]
-  constructor(private eventService: EventService, private toastr: ToastrService, private route: ActivatedRoute) {
+  constructor(private eventService: EventService, private route: ActivatedRoute) {
   }
 
   ngOnInit() {
     this.events = this.route.snapshot.data['events']
-  }
-
-  handleThumbnailClick(eventName) {
-    this.toastr.success(eventName)
   }
 }
