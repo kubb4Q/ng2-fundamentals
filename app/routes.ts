@@ -1,9 +1,10 @@
+import { eventNames } from 'cluster';
 import { Routes } from '@angular/router'
 
 import { Error404Component } from './errors/404.component';
 import {
   EventListResolver,
-  EventRouteActivator,
+  EventResolver,
   CreateEventComponent,
   EventDetailsComponent,
   EventsListComponent,
@@ -26,7 +27,7 @@ export const appRoutes: Routes = [
   {
     path: 'events/:id',
     component: EventDetailsComponent,
-    canActivate: [EventRouteActivator]
+    resolve: { event: EventResolver }
   },
   {
     path: 'events/session/new',

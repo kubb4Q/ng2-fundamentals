@@ -1,3 +1,4 @@
+import { Http, Response } from '@angular/http';
 import { I18nError } from '@angular/compiler/src/i18n/parse_util'
 import { EventEmitter, Injectable } from '@angular/core';
 import { Subject, Observable } from 'rxjs/Rx'
@@ -5,18 +6,20 @@ import { IEvent, ISession } from './event.model'
 
 @Injectable()
 export class EventService {
-  getEvents(): Observable<IEvent[]> {
-    let subject = new Subject<IEvent[]>()
-    setTimeout(() => {
-      subject.next(EVENTS)
-      subject.complete()
-    }, 100)
 
-    return subject
+  constructor(private http: Http) {
+
+  }
+  getEvents(): Observable<IEvent[]> {
+    return this.http.get("/api/events").map((response: Response) => {
+      return <IEvent[]>response.json();
+    }).catch(this.handleError)
   }
 
-  getEvent(id: number): IEvent {
-    return EVENTS.find(event => event.id === id)
+  getEvent(id: number): Observable<IEvent> {
+    return this.http.get(`/api/events/${id}`).map((response: Response) => {
+      return <IEvent>response.json();
+    }).catch(this.handleError)
   }
 
   saveEvent(event) {
@@ -29,7 +32,6 @@ export class EventService {
     let index = EVENTS.findIndex(x => x.id == event.id)
     EVENTS[index] = event
   }
-
   searchSessions(searchTerm: string) {
     let term = searchTerm.toLocaleLowerCase()
     let results: ISession[] = []
@@ -51,6 +53,10 @@ export class EventService {
     }, 100)
 
     return emitter
+  }
+
+  private handleError(error: Response) {
+    return Observable.throw(error.statusText)
   }
 }
 

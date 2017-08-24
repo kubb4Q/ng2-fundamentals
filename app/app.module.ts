@@ -1,13 +1,14 @@
+import { NgModule } from '@angular/core'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from './user/auth.service';
 import { RouterModule } from '@angular/router';
 import { TOASTR_TOKEN, Toastr, JQ_TOKEN, CollapsibleWellComponent, SimpleModalComponent, ModalTriggerDirective } from './common/index';
-import { NgModule } from '@angular/core'
+import { HttpModule } from '@angular/http'
 import { BrowserModule } from '@angular/platform-browser'
 
 import {
   EventListResolver,
-  EventRouteActivator,
+  EventResolver,
   CreateEventComponent,
   EventDetailsComponent,
   EventsListComponent,
@@ -32,6 +33,7 @@ declare let jQuery: Object
   imports: [
     BrowserModule,
     FormsModule,
+    HttpModule,
     ReactiveFormsModule,
     RouterModule.forRoot(appRoutes)
   ],
@@ -62,8 +64,8 @@ declare let jQuery: Object
       provide: JQ_TOKEN,
       useValue: jQuery
     },
-    EventRouteActivator,
     EventListResolver,
+    EventResolver,
     VoterService,
     AuthService,
     {
