@@ -1,4 +1,4 @@
-import { Http, Response } from '@angular/http';
+import { Headers, Http, RequestOptions, Response } from '@angular/http';
 import { I18nError } from '@angular/compiler/src/i18n/parse_util'
 import { EventEmitter, Injectable } from '@angular/core';
 import { Subject, Observable } from 'rxjs/Rx'
@@ -22,16 +22,18 @@ export class EventService {
     }).catch(this.handleError)
   }
 
-  saveEvent(event) {
-    event.id = 999
-    event.session = []
-    EVENTS.push(event)
+  saveEvent(event): Observable<IEvent> {
+    let headers = new Headers({
+      'Content-Type': 'application/json',
+    })
+
+    let options = new RequestOptions({ headers: headers })
+
+    return this.http.post('api/events', JSON.stringify(event), options)
+      .map((response: Response) => { return response.json() })
+      .catch(this.handleError)
   }
 
-  updateEvent(event) {
-    let index = EVENTS.findIndex(x => x.id == event.id)
-    EVENTS[index] = event
-  }
   searchSessions(searchTerm: string) {
     let term = searchTerm.toLocaleLowerCase()
     let results: ISession[] = []
