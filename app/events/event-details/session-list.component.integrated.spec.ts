@@ -3,7 +3,7 @@ import { DurationPipe } from '../shared/duration.pipe';
 import { UpVoteComponent } from './upvote.component';
 import { elementAt } from 'rxjs/operator/elementAt';
 import { TestBed, async, ComponentFixture } from '@angular/core/testing'
-import { DebugElement } from '@angular/core'
+import { DebugElement, NO_ERRORS_SCHEMA } from '@angular/core'
 import { SessionListComponent } from './session-list.component'
 import { AuthService } from '../../user/auth.service'
 import { VoterService } from './voter.service'
@@ -31,9 +31,9 @@ describe('SessionListComponent', () => {
       imports: [],
       declarations: [
         SessionListComponent,
-        UpVoteComponent,
+        //UpVoteComponent,
         DurationPipe,
-        CollapsibleWellComponent
+        //CollapsibleWellComponent
       ],
       providers: [
         {
@@ -45,7 +45,9 @@ describe('SessionListComponent', () => {
           useValue: mockVoeterService
         }
       ],
-      schemas: []
+      schemas: [
+        NO_ERRORS_SCHEMA
+      ]
     }).compileComponents()
   }))
 
