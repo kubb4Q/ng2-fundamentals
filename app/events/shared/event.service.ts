@@ -1,7 +1,7 @@
 import { Headers, Http, RequestOptions, Response } from '@angular/http'
 import { I18nError } from '@angular/compiler/src/i18n/parse_util'
 import { EventEmitter, Injectable } from '@angular/core'
-import { Subject, Observable } from 'rxjs/Rx'
+import { Observable } from 'rxjs/Observable'
 import { IEvent, ISession } from './event.model'
 
 @Injectable()

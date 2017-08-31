@@ -1,3 +1,4 @@
+import './rxjs-extensions'
 import { NgModule } from '@angular/core'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { AuthService } from './user/auth.service'
