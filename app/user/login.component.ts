@@ -1,6 +1,6 @@
-import { Router } from '@angular/router';
-import { AuthService } from './auth.service';
-import { Component } from '@angular/core';
+import { Router } from '@angular/router'
+import { AuthService } from './auth.service'
+import { Component } from '@angular/core'
 
 @Component({
   templateUrl: 'app/user/login.component.html',
@@ -21,7 +21,7 @@ export class LoginComponent {
     this.authService.lognUser(formValues.userName, formValues.password)
       .subscribe(resp => {
         if (!resp) {
-          this.loginInvalid = true;
+          this.loginInvalid = true
         } else {
           this.router.navigate(['events'])
           this.loginInvalid = false

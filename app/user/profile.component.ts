@@ -1,8 +1,8 @@
-import { Toastr, TOASTR_TOKEN } from '../common/toastr.service';
-import { Router } from '@angular/router';
-import { AuthService } from './auth.service';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Component, OnInit, Inject } from '@angular/core';
+import { Toastr, TOASTR_TOKEN } from '../common/toastr.service'
+import { Router } from '@angular/router'
+import { AuthService } from './auth.service'
+import { FormControl, FormGroup, Validators } from '@angular/forms'
+import { Component, OnInit, Inject } from '@angular/core'
 
 @Component({
   templateUrl: 'app/user/profile.component.html',

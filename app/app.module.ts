@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core'
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AuthService } from './user/auth.service';
-import { RouterModule } from '@angular/router';
-import { TOASTR_TOKEN, Toastr, JQ_TOKEN, CollapsibleWellComponent, SimpleModalComponent, ModalTriggerDirective } from './common/index';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { AuthService } from './user/auth.service'
+import { RouterModule } from '@angular/router'
+import { TOASTR_TOKEN, Toastr, JQ_TOKEN, CollapsibleWellComponent, SimpleModalComponent, ModalTriggerDirective } from './common/index'
 import { HttpModule } from '@angular/http'
 import { BrowserModule } from '@angular/platform-browser'
 
@@ -84,5 +84,5 @@ function checkDirtyState(component: CreateEventComponent) {
     return window.confirm('You have not saved this event, do you really want ot cancel?')
   }
 
-  return true;
+  return true
 }

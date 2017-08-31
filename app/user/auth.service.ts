@@ -1,6 +1,6 @@
-import { IUser } from './user.model';
-import { Injectable } from '@angular/core';
-import { Headers, Http, RequestOptions, Response } from '@angular/http';
+import { IUser } from './user.model'
+import { Injectable } from '@angular/core'
+import { Headers, Http, RequestOptions, Response } from '@angular/http'
 import { Observable } from 'rxjs/Rx'
 
 @Injectable()
@@ -38,8 +38,9 @@ export class AuthService {
         return {}
       }
     }).do(currentUser => {
-      if (!!currentUser.userName)
+      if (!!currentUser.userName) {
         this.currentUser = currentUser
+      }
     }).subscribe()
   }
 

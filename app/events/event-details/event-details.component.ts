@@ -1,6 +1,6 @@
-import { ActivatedRoute, Params } from '@angular/router';
-import { EventService } from '../shared/event.service';
-import { Component } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router'
+import { EventService } from '../shared/event.service'
+import { Component } from '@angular/core'
 import { IEvent, ISession } from '../shared/index'
 
 @Component({
@@ -43,6 +43,6 @@ export class EventDetailsComponent {
   }
 
   cancelAddSession() {
-    this.addMode = false;
+    this.addMode = false
   }
 }

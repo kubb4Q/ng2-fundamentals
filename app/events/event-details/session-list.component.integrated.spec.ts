@@ -1,7 +1,4 @@
-import { CollapsibleWellComponent } from '../../common/collapsible-well.component';
-import { DurationPipe } from '../shared/duration.pipe';
-import { UpVoteComponent } from './upvote.component';
-import { elementAt } from 'rxjs/operator/elementAt';
+import { DurationPipe } from '../shared/duration.pipe'
 import { TestBed, async, ComponentFixture } from '@angular/core/testing'
 import { DebugElement, NO_ERRORS_SCHEMA } from '@angular/core'
 import { SessionListComponent } from './session-list.component'
@@ -31,9 +28,7 @@ describe('SessionListComponent', () => {
       imports: [],
       declarations: [
         SessionListComponent,
-        //UpVoteComponent,
         DurationPipe,
-        //CollapsibleWellComponent
       ],
       providers: [
         {
@@ -58,28 +53,28 @@ describe('SessionListComponent', () => {
     element = fixture.nativeElement
   })
 
-  describe('initial bindings', () => {
+  describe("initial bindings", () => {
 
-    it('should have the correct session title', () => {
+    it("should have the correct session title", () => {
       component.sessions = <ISession[]>[{
         id: 3,
-        name: 'Session 1',
-        presenter: 'Joe',
+        name: "Session 1",
+        presenter: "Joe",
         duration: 1,
-        level: 'beginner',
-        abstract: 'abstract',
-        voters: ['john', 'bob']
+        level: "beginner",
+        abstract: "abstract",
+        voters: ["john", "bob"]
       }]
 
-      component.filterBy = 'all'
-      component.sortBy = 'name'
+      component.filterBy = "all"
+      component.sortBy = "name"
       component.eventId = 4
 
       component.ngOnChanges()
       fixture.detectChanges()
 
-      expect(element.querySelector('[well-title]').textContent).toContain('Session 1')
-      expect(debugEl.query(By.css('[well-title]')).nativeElement.textContent).toContain('Session 1')
+      expect(element.querySelector("[well-title]").textContent).toContain("Session 1")
+      expect(debugEl.query(By.css("[well-title]")).nativeElement.textContent).toContain("Session 1")
     })
   })
 })

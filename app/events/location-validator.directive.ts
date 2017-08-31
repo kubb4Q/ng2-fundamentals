@@ -1,4 +1,4 @@
-import { FormGroup, Validator, NG_VALIDATORS } from '@angular/forms';
+import { FormGroup, Validator, NG_VALIDATORS } from '@angular/forms'
 import { Directive } from '@angular/core'
 
 @Directive({
@@ -15,7 +15,7 @@ export class LocationValidator implements Validator {
     if ((addressControl && addressControl.value &&
       cityControl && cityControl.value &&
       coutryControl && coutryControl.value) || (onlineUrlControl && onlineUrlControl.value)) {
-      return null;
+      return null
     }
 
     return { validateLocation: false }

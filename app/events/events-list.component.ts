@@ -1,12 +1,12 @@
-import { IEvent } from './shared/event.model';
-import { ActivatedRoute } from '@angular/router';
-import { EventService } from './shared/event.service';
-import { NgForm } from '@angular/forms/src/directives';
-import { NgFor } from '@angular/common/src/directives/ng_for_of';
-import { ngfactoryFilePath } from '@angular/compiler/src/aot/util';
-import { $NBSP } from '@angular/compiler/src/chars';
-import { Component } from '@angular/core';
-import { selector } from 'rxjs/operator/multicast';
+import { IEvent } from './shared/event.model'
+import { ActivatedRoute } from '@angular/router'
+import { EventService } from './shared/event.service'
+import { NgForm } from '@angular/forms/src/directives'
+import { NgFor } from '@angular/common/src/directives/ng_for_of'
+import { ngfactoryFilePath } from '@angular/compiler/src/aot/util'
+import { $NBSP } from '@angular/compiler/src/chars'
+import { Component } from '@angular/core'
+import { selector } from 'rxjs/operator/multicast'
 
 
 @Component({

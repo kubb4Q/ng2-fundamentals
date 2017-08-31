@@ -1,5 +1,5 @@
-import { IEvent } from './shared/event.model';
-import { Component, Input } from '@angular/core';
+import { IEvent } from './shared/event.model'
+import { Component, Input } from '@angular/core'
 
 @Component({
   selector: 'event-thumbnail',

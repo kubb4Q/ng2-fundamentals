@@ -1,7 +1,7 @@
-import { eventNames } from 'cluster';
+import { eventNames } from 'cluster'
 import { Routes } from '@angular/router'
 
-import { Error404Component } from './errors/404.component';
+import { Error404Component } from './errors/404.component'
 import {
   EventListResolver,
   EventResolver,

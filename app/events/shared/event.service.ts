@@ -1,6 +1,6 @@
-import { Headers, Http, RequestOptions, Response } from '@angular/http';
+import { Headers, Http, RequestOptions, Response } from '@angular/http'
 import { I18nError } from '@angular/compiler/src/i18n/parse_util'
-import { EventEmitter, Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core'
 import { Subject, Observable } from 'rxjs/Rx'
 import { IEvent, ISession } from './event.model'
 
@@ -12,13 +12,13 @@ export class EventService {
   }
   getEvents(): Observable<IEvent[]> {
     return this.http.get("/api/events").map((response: Response) => {
-      return <IEvent[]>response.json();
+      return <IEvent[]>response.json()
     }).catch(this.handleError)
   }
 
   getEvent(id: number): Observable<IEvent> {
     return this.http.get(`/api/events/${id}`).map((response: Response) => {
-      return <IEvent>response.json();
+      return <IEvent>response.json()
     }).catch(this.handleError)
   }
 
@@ -37,7 +37,7 @@ export class EventService {
   searchSessions(searchTerm: string) {
     return this.http.get(`/api/sessions/search?search=${searchTerm}`)
       .map((response: Response) => {
-        return response.json();
+        return response.json()
       }).catch(this.handleError)
   }
 

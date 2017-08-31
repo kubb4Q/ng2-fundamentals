@@ -1,4 +1,4 @@
-import { Component, ElementRef, Inject, Input, ViewChild } from '@angular/core';
+import { Component, ElementRef, Inject, Input, ViewChild } from '@angular/core'
 import { JQ_TOKEN } from './index'
 
 @Component({
